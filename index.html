@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>棚卸し数量差の確認 | サンプル部材室</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+<header><span class="eyebrow">サンプル部材室 ／ 公開デモ</span><h1>棚卸しの数量差を、人の確認待ちに</h1><p>単位・反映時点・調整履歴をたどり、元の記録と照合して判断を残します。</p></header>
+<main>
+  <aside class="notice"><strong>すべて架空のデータです。</strong> 事前に用意したAIの出力例を再生しています。その場でAIを呼んでいません。入力を変えてもAIは再処理しません。<br>「記録上の差が0」は、渡された記録の上では説明がつくという意味です。元の記録の正しさや在庫数量を確認済みにしたものではありません。</aside>
+  <div id="message" role="status" aria-live="polite"></div>
+  <section class="toolbar" aria-label="照合条件">
+    <div><span class="eyebrow">基準時点</span><strong>2026年10月18日 17:00</strong><small>差 = 棚卸数量 − 帳簿数量</small></div>
+    <label>AIの版<select id="version"><option value="corrected">修正版：全行に人の確認待ち</option><option value="initial">初版：表の外だけに確認待ち</option><option value="teaching">誤りの教材：人が止める</option></select></label>
+    <label>入出庫の計算方式<select id="method"><option value="unique">同じ伝票番号を1回だけ数える</option><option value="all">入出庫を全行足す</option></select></label>
+  </section>
+  <div id="version-note" class="notice"></div>
+  <section aria-labelledby="list-title"><div class="section-heading"><h2 id="list-title">01　確認待ちの一覧</h2><span id="progress"></span></div><div id="items" class="item-list"></div></section>
+  <section id="workspace" aria-labelledby="item-title"></section>
+  <section><h2>03　判断の履歴</h2><p>誰が・いつ・どう判断したかと、その時点の入力・計算結果を残します。回答後は分類を選び直すまで確認待ちです。</p><div id="history"></div></section>
+  <section><h2>04　確認待ちの一覧と履歴を確定・書き出し</h2><p>全品目に採用または保留の判断が必要です。保留は確認待ちとして書き出されます。確定しても帳簿への書き戻し・調整の記帳・質問の送信は行いません。</p><button id="finalize">一覧と判断の履歴を確定</button> <strong id="final-status">未確定</strong><button id="export">現在の一覧・質問の下書き・履歴をJSONで書き出す</button><p>書き出しは未確定でも可能です。未確定であることも含めます。リロードすると入力と判断は初期状態に戻ります。</p><details><summary>書き出し内容を確認</summary><pre id="export-preview">書き出し後に表示します。</pre></details></section>
+  <section><h2>AIの分類を自分で用意する</h2><p>下の指示はコピー用です。デモから生成AIへの接続・送信はしません。架空データだけを扱ってください。</p><button id="prompt-copy">項目の説明と指示をコピー</button><details><summary>コピーする指示と現在の記録を見る</summary><pre id="prompt"></pre></details><label>AIの出力JSON（配列。1品目から取り込めます）<textarea id="import-json" rows="6" placeholder='[{"item":"A","category":"比較できる差","refs":["L-A","S-A","U-A"],"reason":"換算後も差が残る","question":"再計数を確認してください"}]'></textarea></label><button id="import">JSONを取り込んで人の確認待ちにする</button><p>形式と元番号を検証します。分類内容の正しさは人が確認します。採用前に元の記録を開き直してください。</p></section>
+</main>
+<footer>AIは候補・元番号・理由・質問の下書き、コードは換算と照合、人は元の記録の確認と判断を担当します。<br>在庫・会計処理の正しさ、精度・正答率・時間削減・費用効果は示しません。個別の会計・税務の判断はしません。</footer>
+</body>
+</html>

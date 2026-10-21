@@ -1,0 +1,202 @@
+{
+  "company": "サンプル部材室",
+  "reference": "2026-10-18T17:00",
+  "items": [
+    {
+      "id": "A",
+      "name": "架空留め具A",
+      "records": [
+        {
+          "id": "L-A",
+          "kind": "L",
+          "quantity": 5,
+          "unit": "箱",
+          "time": "2026-10-18T17:00",
+          "scope": "第一庫"
+        },
+        {
+          "id": "S-A",
+          "kind": "S",
+          "quantity": 48,
+          "unit": "個",
+          "time": "2026-10-18T17:00",
+          "scope": "第一庫"
+        },
+        {
+          "id": "U-A",
+          "kind": "U",
+          "quantity": 10,
+          "unit": "個",
+          "time": "2026-10-18T17:00",
+          "scope": "第一庫",
+          "note": "未開封1箱10個",
+          "unopened": true
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "架空留め具B",
+      "records": [
+        {
+          "id": "L-B",
+          "kind": "L",
+          "quantity": 100,
+          "unit": "個",
+          "time": "2026-10-18T17:00",
+          "scope": "第一庫"
+        },
+        {
+          "id": "S-B",
+          "kind": "S",
+          "quantity": 95,
+          "unit": "個",
+          "time": "2026-10-18T17:00",
+          "scope": "第一庫"
+        },
+        {
+          "id": "T-B1",
+          "kind": "T",
+          "quantity": 5,
+          "unit": "個",
+          "time": "2026-10-18T16:55",
+          "scope": "第一庫",
+          "voucher": "OUT-01",
+          "direction": "出庫",
+          "reflected": false,
+          "note": "17:15入力予定"
+        },
+        {
+          "id": "T-B2",
+          "kind": "T",
+          "quantity": 5,
+          "unit": "個",
+          "time": "2026-10-18T16:55",
+          "scope": "第一庫",
+          "voucher": "OUT-01",
+          "direction": "出庫",
+          "reflected": false,
+          "note": "T-B1と同じOUT-01の再掲"
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "架空留め具C",
+      "records": [
+        {
+          "id": "L-C",
+          "kind": "L",
+          "quantity": 100,
+          "unit": "個",
+          "time": "2026-10-18T17:10",
+          "scope": "第一庫"
+        },
+        {
+          "id": "S-C",
+          "kind": "S",
+          "quantity": 95,
+          "unit": "個",
+          "time": "2026-10-18T17:00",
+          "scope": "第一庫"
+        },
+        {
+          "id": "T-C",
+          "kind": "T",
+          "quantity": 5,
+          "unit": "個",
+          "time": "2026-10-18T17:05",
+          "scope": "第一庫",
+          "voucher": "IN-01",
+          "direction": "入庫",
+          "reflected": true,
+          "note": "17:10版の帳簿に反映済み"
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "name": "架空留め具D",
+      "records": [
+        {
+          "id": "L-D",
+          "kind": "L",
+          "quantity": 100,
+          "unit": "個",
+          "time": "2026-10-18T17:00",
+          "scope": "第一庫＋第二庫"
+        },
+        {
+          "id": "S-D",
+          "kind": "S",
+          "quantity": 95,
+          "unit": "個",
+          "time": "2026-10-18T17:00",
+          "scope": "第一庫"
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "name": "架空留め具E",
+      "records": [
+        {
+          "id": "L-E0",
+          "kind": "L",
+          "quantity": 100,
+          "unit": "個",
+          "time": "2026-10-18T16:55",
+          "scope": "第一庫"
+        },
+        {
+          "id": "L-E1",
+          "kind": "L",
+          "quantity": 95,
+          "unit": "個",
+          "time": "2026-10-18T17:10",
+          "scope": "第一庫"
+        },
+        {
+          "id": "S-E",
+          "kind": "S",
+          "quantity": 95,
+          "unit": "個",
+          "time": "2026-10-18T17:00",
+          "scope": "第一庫"
+        },
+        {
+          "id": "J-E",
+          "kind": "J",
+          "quantity": -5,
+          "unit": "個",
+          "time": "2026-10-18T17:10",
+          "scope": "第一庫",
+          "target": "S-E",
+          "note": "S-Eを対象に記帳済み"
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "name": "架空留め具F",
+      "records": [
+        {
+          "id": "L-F",
+          "kind": "L",
+          "quantity": 100,
+          "unit": "個",
+          "time": "2026-10-18T17:00",
+          "scope": "第一庫"
+        },
+        {
+          "id": "S-F",
+          "kind": "S",
+          "quantity": 95,
+          "unit": "個",
+          "time": "2026-10-18T17:00",
+          "scope": "第一庫"
+        }
+      ]
+    }
+  ]
+}

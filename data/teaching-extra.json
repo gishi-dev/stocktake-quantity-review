@@ -1,0 +1,12 @@
+{
+  "id": "T-B3",
+  "kind": "T",
+  "quantity": 5,
+  "unit": "個",
+  "time": "2026-10-18T16:56",
+  "scope": "第一庫",
+  "voucher": "OUT-02",
+  "direction": "出庫",
+  "reflected": false,
+  "note": "教材にだけ追加した別伝票の出庫。OUT-01の再掲ではない。"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "stocktake-quantity-review",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "架空の棚卸しで数量差を人の確認待ちにする公開デモ",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --check server.mjs && node --check app.js && node --check calculation.js"
+  },
+  "dependencies": {}
+}
